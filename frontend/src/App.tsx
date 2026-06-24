@@ -1,13 +1,21 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import CreateTask from './pages/CreateTask';
+import TaskList from './pages/TaskList';
+import TaskDetail from './pages/TaskDetail';
 
 function App() {
   return (
-    <div className="App">
-        <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-    </div>
+    <>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/tasks' element={<TaskList/>}/>
+      <Route path='/tasks/new' element={<CreateTask/>}/>
+      <Route path='/tasks/detail' element={<TaskDetail/>}/>
+    </Routes>
+    </BrowserRouter>
+    </>
+    
   );
 }
 
